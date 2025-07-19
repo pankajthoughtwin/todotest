@@ -1,0 +1,184 @@
+.newsletter-container {
+  background-color: #f5f5f5;
+  padding: 80px 20px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  /* Ensure it doesn't interfere with other elements */
+  position: static;
+  z-index: auto;
+  clear: both;
+  display: block;
+}
+
+.newsletter-content {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.newsletter-title {
+  font-size: 48px;
+  font-weight: 400;
+  color: #000000;
+  margin: 0 0 16px 0;
+  font-family: Georgia, serif;
+  line-height: 1.2;
+}
+
+.newsletter-subtitle {
+  font-size: 18px;
+  color: #666666;
+  margin: 0 0 40px 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.4;
+}
+
+.success-message {
+  padding: 16px 24px;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.newsletter-form {
+  width: 100%;
+  position: relative;
+}
+
+.input-group {
+  display: inline-flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.email-input {
+  flex: 1;
+  padding: 16px 20px;
+  font-size: 16px;
+  border: 2px solid #cccccc;
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: white;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.email-input:focus {
+  border-color: #4285f4;
+  z-index: 2;
+}
+
+.subscribe-button {
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #4285f4;
+  color: white;
+  border: 2px solid #4285f4;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-family: system-ui, -apple-system, sans-serif;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+}
+
+.subscribe-button:hover:not(.disabled) {
+  background-color: #3367d6;
+  z-index: 2;
+}
+
+.subscribe-button.disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Ensure the section doesn't interfere with other elements */
+.newsletter-section {
+  position: static;
+  z-index: auto;
+  display: block;
+  clear: both;
+  overflow: visible;
+  isolation: isolate; /* Create new stacking context */
+}
+
+/* Reset any potential conflicts */
+.newsletter-section,
+.newsletter-section * {
+  box-sizing: border-box;
+}
+
+/* Ensure no absolute positioning conflicts */
+.newsletter-section *:not(.email-input):not(.subscribe-button) {
+  position: static;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .newsletter-container {
+    padding: 60px 20px;
+  }
+
+  .newsletter-title {
+    font-size: 36px;
+  }
+
+  .newsletter-subtitle {
+    font-size: 16px;
+  }
+
+  .input-group {
+    flex-direction: column;
+    gap: 0;
+    display: flex;
+  }
+
+  .email-input {
+    border-right: 2px solid #cccccc;
+    border-radius: 4px 4px 0 0;
+    width: 100%;
+  }
+
+  .subscribe-button {
+    border-radius: 0 0 4px 4px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .newsletter-container {
+    padding: 40px 15px;
+  }
+
+  .newsletter-title {
+    font-size: 28px;
+  }
+
+  .newsletter-subtitle {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .email-input,
+  .subscribe-button {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+}
